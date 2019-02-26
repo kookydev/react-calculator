@@ -1,33 +1,55 @@
 import React, { Component } from "react";
+import "./Display.css";
 
 class Display extends Component {
   state = {
     value: 0,
-    input: parseInt(this.state.inputArray.join("")),
-    inputArray: [],
+    input: 0,
+    inputArray: [0],
     display: 0
   };
   digitAdder = props => {
-    this.state.inputArray.push(props.value);
+    let tempArray = this.state.inputArray;
+    tempArray.push(props.value);
+    this.setState({ inputArray: tempArray });
+    this.inputParser();
+  };
+
+  inputParser = () => {
+    let tempValue = parseInt(this.state.inputArray.join(""));
+    this.setState({ input: tempValue, display: tempValue });
   };
 
   addition = () => {
-    this.state.value = this.state.value + this.state.input;
+    let tempValue = this.state.value + this.state.input;
+    this.setState({ value: tempValue });
   };
 
   subtraction = () => {
-    this.state.value = this.state.value - this.state.input;
+    this.setState({ value: this.state.value - this.state.input });
   };
 
   multiplication = () => {
-    this.state.value = this.state.value * this.state.input;
+    this.setState({ value: this.state.value * this.state.input });
+  };
+  division = () => {
+    this.setState({ value: this.state.value / this.state.input });
+  };
+  clearDisplay = () => {
+    this.setState({ value: 0 });
   };
 
-  division = () => {
-    this.state.value = this.state.value / this.state.input;
+  negateValue = () => {
+    let tempValue = -1 * this.state.value;
+    this.setState({ value: tempValue });
   };
+
+  percentage = () => {
+    this.setState({ value: this.state.value / 100 });
+  };
+
   render() {
-    return this.state.display;
+    return <div className="display">{this.state.display}</div>;
   }
 }
 

@@ -6,7 +6,7 @@ import Keyboard from "./Keyboard";
 const Container = props => {
   return (
     <div className="container">
-      <Display />
+      <Display className="display" />
       <Keyboard />
     </div>
   );

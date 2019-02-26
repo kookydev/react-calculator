@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Buttons.css";
 
-const Buttons = props => {
+const FunctionButtons = props => {
   return (
     <div className={props.class} value={props.value}>
       {props.value}
@@ -9,4 +9,4 @@ const Buttons = props => {
   );
 };
 
-export default Buttons;
+export default FunctionButtons;

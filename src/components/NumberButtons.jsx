@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import "./Buttons.css";
+import Display from "./Display";
 
-const Buttons = props => {
+const NumberButtons = props => {
   return (
-    <div className={props.class} value={props.value}>
+    <div
+      onClick={Display.digitAdder}
+      value={props.value}
+      className="number-buttons"
+    >
       {props.value}
     </div>
   );
 };
 
-export default Buttons;
+export default NumberButtons;
