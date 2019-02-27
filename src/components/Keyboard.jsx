@@ -2,7 +2,6 @@ import React from "react";
 import "./Keyboard.css";
 
 import Buttons from "./Buttons";
-import Display from "./Display";
 
 const Keyboard = props => {
   return (

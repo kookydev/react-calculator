@@ -9,13 +9,13 @@ class Display extends Component {
     inputArray: [0],
     display: 0
   };
-  digitAdder = props => {
+  digitAdder = value => {
     let tempArray = this.state.inputArray;
-    if (props.value.isNaN && props.value !== ".") {
-      this.setState({ operator: props.value });
+    if (value.isNaN && value !== ".") {
+      this.setState({ operator: value });
       console.log(`operator: ${this.state.operator}`);
     } else {
-      tempArray.push(props.value);
+      tempArray.push(value);
       this.setState({ inputArray: tempArray });
       console.log(`inputArray: ${this.state.inputArray}`);
       this.inputParser();

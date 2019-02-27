@@ -3,11 +3,12 @@ import "./Buttons.css";
 import Display from "./Display";
 
 const Buttons = props => {
+  console.log(props.value);
   return (
     <button
       onClick={Display.digitAdder}
-      value={props.value}
       className={props.class}
+      value={props.value}
     >
       {props.value}
     </button>
