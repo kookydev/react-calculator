@@ -1,14 +1,43 @@
-.number-buttons {
+.buttons {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: rgb(128, 128, 128);
     border: 1px solid rgb(77, 76, 76);
     color: white;
+    font-size: 1em;
+}
+
+.buttons:focus {
+    outline: none;
+}
+
+
+.number-buttons {
+    background: rgb(128, 128, 128);
+}
+
+.number-buttons:active {
+    background: rgb(173, 173, 173);
 }
 
 .zero-button {
     grid-area: span 1 / span 2;
+}
+
+.operator-buttons {
+    background: rgb(255, 174, 0);
+}
+
+.operator-buttons:active {
+    background: rgb(255, 191, 53);
+}
+
+.function-buttons {
+    background: rgb(100, 100, 100);
+}
+
+.function-buttons:active {
+    background: rgb(128, 128, 128);
 }

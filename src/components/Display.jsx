@@ -5,14 +5,21 @@ class Display extends Component {
   state = {
     value: 0,
     input: 0,
+    operator: 0,
     inputArray: [0],
     display: 0
   };
   digitAdder = props => {
     let tempArray = this.state.inputArray;
-    tempArray.push(props.value);
-    this.setState({ inputArray: tempArray });
-    this.inputParser();
+    if (props.value.isNaN && props.value !== ".") {
+      this.setState({ operator: props.value });
+      console.log(`operator: ${this.state.operator}`);
+    } else {
+      tempArray.push(props.value);
+      this.setState({ inputArray: tempArray });
+      console.log(`inputArray: ${this.state.inputArray}`);
+      this.inputParser();
+    }
   };
 
   inputParser = () => {
@@ -20,33 +27,38 @@ class Display extends Component {
     this.setState({ input: tempValue, display: tempValue });
   };
 
-  addition = () => {
-    let tempValue = this.state.value + this.state.input;
-    this.setState({ value: tempValue });
-  };
+  // addition = () => {
+  //   let tempValue = this.state.value + this.state.input;
+  //   this.setState({ value: tempValue });
+  // };
 
-  subtraction = () => {
-    this.setState({ value: this.state.value - this.state.input });
-  };
+  // subtraction = () => {
+  //   let tempValue = this.state.value - this.state.input;
+  //   this.setState({ value: tempValue });
+  // };
 
-  multiplication = () => {
-    this.setState({ value: this.state.value * this.state.input });
-  };
-  division = () => {
-    this.setState({ value: this.state.value / this.state.input });
-  };
-  clearDisplay = () => {
-    this.setState({ value: 0 });
-  };
+  // multiplication = () => {
+  //   let tempValue = this.state.value * this.state.input;
+  //   this.setState({ value: tempValue });
+  // };
+  // division = () => {
+  //   let tempValue = this.state.value / this.state.input;
+  //   this.setState({ value: tempValue });
+  // };
+  // clearDisplay = () => {
+  //   this.setState({ value: 0 });
+  // };
 
-  negateValue = () => {
-    let tempValue = -1 * this.state.value;
-    this.setState({ value: tempValue });
-  };
+  // equals = () => {};
 
-  percentage = () => {
-    this.setState({ value: this.state.value / 100 });
-  };
+  // negateValue = () => {
+  //   let tempValue = -1 * this.state.value;
+  //   this.setState({ value: tempValue });
+  // };
+
+  // percentage = () => {
+  //   this.setState({ value: this.state.value / 100 });
+  // };
 
   render() {
     return <div className="display">{this.state.display}</div>;

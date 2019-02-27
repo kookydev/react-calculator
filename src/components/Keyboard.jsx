@@ -1,31 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Keyboard.css";
 
-import NumberButtons from "./NumberButtons";
-import FunctionButtons from "./FunctionButtons";
+import Buttons from "./Buttons";
 import Display from "./Display";
 
 const Keyboard = props => {
   return (
     <div className="keyboard-grid">
-      <FunctionButtons value={Display.clearDisplay} />
-      <FunctionButtons value={Display.negateValue} />
-      <FunctionButtons value={Display.percentage} />
-      <FunctionButtons value={Display.division} />
-      <NumberButtons value="7" />
-      <NumberButtons value="8" />
-      <NumberButtons value="9" />
-      <FunctionButtons value={Display.multiplication} />
-      <NumberButtons value="4" />
-      <NumberButtons value="5" />
-      <NumberButtons value="6" />
-      <FunctionButtons value={Display.subtraction} />
-      <NumberButtons value="1" />
-      <NumberButtons value="2" />
-      <NumberButtons value="3" />
-      <FunctionButtons value={Display.addition} />
-      <NumberButtons value="0" className="zero-button" />
-      <NumberButtons value="." />
+      <Buttons value="CE" class="buttons function-buttons" />
+      <Buttons value="+/-" class="buttons function-buttons" />
+      <Buttons value="%" class="buttons function-buttons" />
+      <Buttons value="÷" class="buttons operator-buttons" />
+      <Buttons value={7} class="buttons number-buttons" />
+      <Buttons value={8} class="buttons number-buttons" />
+      <Buttons value={9} class="buttons number-buttons" />
+      <Buttons value="x" class="buttons operator-buttons" />
+      <Buttons value={4} class="buttons number-buttons" />
+      <Buttons value={5} class="buttons number-buttons" />
+      <Buttons value={6} class="buttons number-buttons" />
+      <Buttons value="-" class="buttons operator-buttons" />
+      <Buttons value={1} class="buttons number-buttons" />
+      <Buttons value={2} class="buttons number-buttons" />
+      <Buttons value={3} class="buttons number-buttons" />
+      <Buttons value="+" class="buttons operator-buttons" />
+      <Buttons value={0} class="buttons zero-button number-buttons" />
+      <Buttons value="." class="buttons number-buttons" />
+      <Buttons value="=" class="buttons operator-buttons" />
     </div>
   );
 };

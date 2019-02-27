@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Container.css";
 import Display from "./Display";
 import Keyboard from "./Keyboard";
