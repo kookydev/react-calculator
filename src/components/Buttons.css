@@ -8,3 +8,7 @@
     border: 1px solid rgb(77, 76, 76);
     color: white;
 }
+
+.zero-button {
+    grid-area: span 1 / span 2;
+}

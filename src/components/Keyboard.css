@@ -5,7 +5,3 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
 }
-
-.zero-button {
-    grid-area: 6 / 1 / span 1 / span 2;
-}
