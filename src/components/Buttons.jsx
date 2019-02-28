@@ -2,11 +2,13 @@ import React from "react";
 import "./Buttons.css";
 
 const Buttons = props => {
-  console.log(props.value);
+  let keyVal = props.value.toString();
+  console.log(keyVal);
   return (
     <button
       onClick={() => props.digitHandler(props.value)}
       className={props.class}
+      key={keyVal}
       // value={props.value}
     >
       {props.value}
